@@ -1,14 +1,14 @@
-##Ear Unwrapper Pipeline
+## Ear Unwrapper Pipeline
 Owen Hudson, Colin Brahmstedt, Dylan Hudson, and Jeremy Brawner
 
 If you find this resource useful, please cite:
 
 The Ear Unwrapper is a machine that was designed to image ears of corn/maize. If adjusted and calibrated appropriately for differences in size, other cylindrical objects can also be imaged with the line-scan unwrapping technique.
 
-##Design and Function:
+## Design and Function:
 The Ear Unwrapper performs a line-scan to image a full cylindrical object into a 'flat' or 'unwrapped' version allowing the entire surface of the object to be analyzed. A stepper motor sequentially rotates an ear while taking a series of images at highly accurate intervals, dewarping the images, then slicing a 'line' of pixels from each, and combining these thin lines into a single composite image. The images are then scaled to reflect their relative size, as natural changes in corn ear diameter cause stretching or compression when using a constant number of steps/pixels, then processed with a random forest model via the [Ilastik](https://www.ilastik.org/) biological image processing suite for semantic pixel classification. Post-processing of the probabilistic semantic pixel maps includes cropping, blur, then thresholding for mask creation for subsequent quantitative analysis. 
 
-##Usage of Image Acquisition and Post-Processing Scripts
+## Usage of Image Acquisition and Post-Processing Scripts
 
 Requirements:
 Python version > 3.6 (possibly compatible with previous versions, but not fully tested below 3.6)
